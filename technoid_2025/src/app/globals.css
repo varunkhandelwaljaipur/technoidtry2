@@ -2,37 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Custom Styles below */
 :root {
-  --background: 5 5 5;
-  --foreground: 224 224 224;
-  --neon-cyan: #00f3ff;
-  --neon-pink: #ff00ff;
-  --neon-yellow: #ffee00;
+  --foreground-rgb: 255, 255, 255;
 }
 
 body {
-  background-color: rgb(var(--background));
-  color: rgb(var(--foreground));
-  overflow-x: hidden;
+  background-color: #050505;
+  color: #fff;
 }
 
 /* Scanline Effect */
-body::before {
+body::after {
   content: "";
-  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
-              linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
-  background-size: 100% 2px, 3px 100%;
-  pointer-events: none; z-index: 50;
-}
-
-/* Utilities */
-.text-neon-cyan { color: var(--neon-cyan); }
-.text-neon-pink { color: var(--neon-pink); }
-.text-neon-yellow { color: var(--neon-yellow); }
-.bg-cyber-black { background-color: #050505; }
-
-.glitch-text {
-  position: relative;
-  text-shadow: 2px 2px 0px var(--neon-pink), -2px -2px 0px var(--neon-cyan);
+  position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+  background: repeating-linear-gradient(0deg, rgba(0,0,0,0.15), rgba(0,0,0,0.15) 1px, transparent 1px, transparent 2px);
+  pointer-events: none; z-index: 9999;
 }
