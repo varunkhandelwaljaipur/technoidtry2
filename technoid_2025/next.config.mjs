@@ -1,14 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // 1. Force Vercel to ignore code style errors
   eslint: {
     ignoreDuringBuilds: true,
   },
-  // 2. Force Vercel to ignore TypeScript errors
   typescript: {
     ignoreBuildErrors: true,
   },
-  // 3. Image Optimization settings
   images: {
     loader: "custom",
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
