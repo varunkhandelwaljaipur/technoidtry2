@@ -119,60 +119,45 @@ export default function EventsPage() {
                 // --- THE EVENT CARD CONTAINER ---
                 <div 
                   key={event.title} 
-                  className="clip-tile group relative flex flex-col bg-cyber-black/70 backdrop-blur-sm border border-neon-cyan/30 overflow-hidden transition-all duration-300 hover:border-neon-cyan/100 hover:shadow-[0_0_30px_rgba(0,243,255,0.3)]"
+                  className="clip-tile group relative flex flex-col h-[450px] bg-cyber-black/70 backdrop-blur-sm border border-neon-cyan/30 overflow-hidden transition-all duration-300 hover:border-neon-cyan/100 hover:shadow-[0_0_30px_rgba(0,243,255,0.3)]"
                 >
                   
-                  {/* --- 1. IMAGE AREA --- */}
-                  <div className="relative h-64 overflow-hidden">
-
+                  {/* --- 1. FULL POSTER DISPLAY --- */}
+                  <div className="absolute inset-0 w-full h-full">
                     <CyberImage
                       src={event.poster}
                       alt={`${event.title} Poster`}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 mix-blend-luminosity opacity-60 group-hover:opacity-100"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 mix-blend-normal opacity-100" 
                     />
-
-                    <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors" />
-                    
-   
-                    <div className="absolute top-0 left-0 w-full p-4 font-mono text-sm text-white drop-shadow-lg opacity-80">
-                        {event.tag}
-                    </div>
+                    {/* Subtle gradient at bottom for readability of tag if needed, but keeping it clean mostly */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />
                   </div>
-                  
-                  {/* --- 2. BOTTOM CONTENT & HOVER REVEAL --- */}
-                  <div className="p-4 flex flex-col flex-grow">
+
+                  {/* --- 2. HOVER OVERLAY (Details) --- */}
+                  <div className="absolute inset-0 bg-cyber-black/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 translate-y-4 group-hover:translate-y-0">
                     
-                    {/* Main Title (Always Visible) */}
-                    <h3 className={`text-2xl font-orbitron font-bold text-white mb-3`}>
-                      {event.title}
-                    </h3>
-                    
-                    <div className="flex items-center justify-between mb-3">
-                      <span className={`font-mono text-sm ${category.categoryColor} opacity-80`}>
-                        {category.categoryTitle.includes("PRE-EVENTS") ? "PRE-EVENT" : "MAIN DAY"}
+                    <div className="flex items-center justify-between mb-2">
+                      <span className={`font-mono text-xs ${category.categoryColor} uppercase tracking-widest`}>
+                        {event.tag}
                       </span>
                       <EventIcon title={event.title} />
                     </div>
-
-                
-                    <div className="absolute inset-0 pt-64 bg-cyber-black/95 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-full group-hover:translate-y-0">
-                        
-                        <div className="p-4 pt-16 h-full flex flex-col justify-between">
-                            {/* Description */}
-                            <p className="font-rajdhani text-gray-300 text-lg leading-relaxed flex-grow">
-                                {event.desc}
-                            </p>
-
                     
-                            <Button asChild variant="default" className="mt-4 w-full">
-                                <Link href="https://registration.sxcjpr.edu.in/event/technoid-2025/">
-                                    REGISTER NOW
-                                </Link>
-                            </Button>
-                        </div>
-                    </div>
+                    <h3 className="text-2xl font-orbitron font-bold text-white mb-3 leading-tight">
+                      {event.title}
+                    </h3>
+                    
+                    <p className="font-rajdhani text-gray-300 text-sm mb-6 line-clamp-4">
+                      {event.desc}
+                    </p>
 
+                    <Button asChild variant="default" className="w-full bg-neon-cyan text-black hover:bg-white font-orbitron font-bold tracking-wider">
+                        <Link href="#">
+                            REGISTER NOW
+                        </Link>
+                    </Button>
                   </div>
+                  
                 </div>
               ))}
             </div>
