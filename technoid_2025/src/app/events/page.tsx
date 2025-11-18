@@ -129,8 +129,9 @@ export default function EventsPage() {
                     <CyberImage
                       src={event.poster}
                       alt={`${event.title} Poster`}
-                      // Removed mix-blend-luminosity. Images are always full color now.
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+                      // CHANGED: object-fill forces the image to fill the entire container area
+                      // This ensures no part of the poster is cut off, although it may stretch slightly if ratios differ.
+                      className="w-full h-full object-fill transition-transform duration-700 group-hover:scale-110" 
                     />
                     {/* Subtle bottom gradient to make sure text pops if image is light */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-50" />
