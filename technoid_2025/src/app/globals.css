@@ -8,6 +8,7 @@
   --neon-cyan: #00f3ff;
   --neon-pink: #ff00ff;
   --neon-yellow: #ffee00;
+  --neon-cyan-translucent: rgba(0, 243, 255, 0.1); /* <-- ADD THIS */
 }
 
 body {
@@ -28,4 +29,53 @@ body::after {
 .glitch-text {
   position: relative;
   text-shadow: 2px 2px 0px var(--neon-pink), -2px -2px 0px var(--neon-cyan);
+}
+
+/* --- ADD ALL OF THIS BELOW --- */
+
+/* Utility for sharp-edged tiles */
+.clip-tile {
+  clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
+}
+
+/* Hologram Background Effect */
+.hologram-background {
+  position: relative;
+  overflow: hidden; /* Ensures effects don't leak */
+}
+
+/* Fixed grid lines */
+.hologram-background::before {
+  content: "";
+  position: fixed; /* Fixed position so it doesn't scroll */
+  inset: 0;
+  background-image: linear-gradient(to right, var(--neon-cyan-translucent) 1px, transparent 1px),
+                    linear-gradient(to bottom, var(--neon-cyan-translucent) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.3;
+  animation: pan-grid 20s linear infinite;
+  z-index: -10;
+}
+
+/* Animated scan line */
+.hologram-background::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px; /* Height of the scan line */
+  z-index: -10;
+  background: linear-gradient(to bottom, rgba(0, 243, 255, 0.4), transparent);
+  animation: scan-line 8s linear infinite;
+}
+
+@keyframes pan-grid {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 400px 0; } /* Pan horizontally */
+}
+
+@keyframes scan-line {
+  0% { transform: translateY(-30vh); }
+  100% { transform: translateY(130vh); }
 }
