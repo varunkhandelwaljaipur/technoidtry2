@@ -20,7 +20,7 @@ const EventIcon = ({ title }: { title: string }) => {
   return iconMap[title] || <Code className="w-5 h-5 text-gray-500" />;
 };
 
-// --- Event Data Structure ---
+// --- Event Data Structure with Image Paths ---
 const eventCategories = [
   {
     categoryTitle: "PRE-EVENTS // UPLOAD_INCOMING",
@@ -30,13 +30,13 @@ const eventCategories = [
         title: "Neon Narratives",
         tag: "Pre-Event / Photography",
         desc: "A photography event where participants capture visual stories of technology, light, and life in a cyber-inspired world filled with vibrant colours and futuristic reflections.",
-        poster: "https://placehold.co/600x400/050505/ff00ff?text=Neon+Narratives"
+        poster: "/images/Neon Narratives.jpg" 
       },
       {
         title: "Reel-o-Tron",
         tag: "Pre-Event / Reel Making",
         desc: "Short reels (30–60 seconds) on cyberpunk life, AI evolution, or cybersecurity. Judged on storytelling, editing, and innovation.",
-        poster: "https://placehold.co/600x400/050505/ff00ff?text=Reel-o-Tron"
+        poster: "/images/Reelotron.jpg" 
       }
     ]
   },
@@ -48,25 +48,25 @@ const eventCategories = [
         title: "Tech Trivia",
         tag: "Tech Quiz",
         desc: "A fast-paced tech quiz testing knowledge in AI, cybersecurity, coding, and futuristic trends. Two rounds (MCQ + Buzzer) with neon visuals and glitch rounds.",
-        poster: "https://placehold.co/600x400/050505/00f3ff?text=Tech+Trivia"
+        poster: "/images/Tech Trivia.jpg" 
       },
       {
         title: "Crafted Canvas",
         tag: "Art / Poster Making",
         desc: "An artistic event where participants express cyberpunk ideas through posters on AI takeover, data ethics, and cyber safety. Displayed in a blacklight ‘Neon Gallery’.",
-        poster: "https://placehold.co/600x400/050505/00f3ff?text=Crafted+Canvas"
+        poster: "/images/Crafted Canvas.jpg" 
       },
       {
         title: "TechnoRebirth",
         tag: "E-Waste / Creative",
         desc: "Focuses on transforming electronic waste into innovative and sustainable creations, repurposing components like circuit boards and wires into useful or artistic models.",
-        poster: "https://placehold.co/600x400/050505/00f3ff?text=TechnoRebirth"
+        poster: "/images/Techno Rebirth.jpg" 
       },
       {
         title: "Hack-a-Meme",
         tag: "AI / Creative",
         desc: "Unleash your wit in the AI Meme Battle! Participants will use AI tools to craft memes inspired by cyberpunk and cybersecurity themes.",
-        poster: "https://placehold.co/600x400/050505/00f3ff?text=Hack-a-Meme"
+        poster: "/images/Hack-a-meme.jpg" 
       }
     ]
   },
@@ -78,25 +78,25 @@ const eventCategories = [
         title: "Neon Velocity",
         tag: "Gaming / Racing",
         desc: "Inspired by Need for Speed and Road Rash, compete head-to-head in a neon-drenched city where speed meets rebellion.",
-        poster: "https://placehold.co/600x400/050505/ffee00?text=Neon+Velocity"
+        poster: "/images/Retro Recharged.jpg" 
       },
       {
         title: "CyberMote",
         tag: "Team Event / Fun",
         desc: "Teams will use creativity and coordination to bring emojis (like 🔼, ❤️, 😂, ⚡) to life by acting, posing, or forming shapes together.",
-        poster: "https://placehold.co/600x400/050505/ffee00?text=CyberMote"
+        poster: "/images/Cybermote.jpg" 
       },
       {
         title: "The Neon Trail",
         tag: "Team Event / Treasure Hunt",
         desc: "A campus-wide QR and code-based hunt. Teams decode virtual clues and locate ‘data shards’ to uncover the AI core.",
-        poster: "https://placehold.co/600x400/050505/ffee00?text=Neon+Trail"
+        poster: "/images/Treasure Hunt.jpg" 
       },
       {
         title: "LAN Gaming Arena",
         tag: "Gaming / E-Sports",
         desc: "Competitive gaming in a neon-lit arena. Games include Valorant, BGMI and Tekken, representing AI clans fighting for control of the Neon City.",
-        poster: "https://placehold.co/600x400/050505/ffee00?text=LAN+Gaming"
+        poster: "/images/Lan Gaming.jpg" 
       }
     ]
   }
@@ -104,7 +104,7 @@ const eventCategories = [
 
 export default function EventsPage() {
   return (
-    // Apply the hologram background to the main wrapper (requires globals.css update)
+    
     <main className="min-h-screen bg-cyber-black hologram-background">
       <TitleBanner title="EVENTS_PROTOCOL" subtitle="Accessing Mainframe..." />
       
