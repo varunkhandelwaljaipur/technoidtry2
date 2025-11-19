@@ -8,7 +8,7 @@ import CyberImage from "@/components/CyberImage";
 export default function Home() {
   // Paths to your images (Upload these to public/images/)
   const mainPosterImage = "/images/MainPoster.jpg"; 
-  const scheduleImage = "/images/Schedule.jpg";
+  const scheduleImage = "/images/EventList.jpg";
 
   return (
     <main className="min-h-screen text-white bg-[#050505] overflow-x-hidden">
@@ -59,14 +59,9 @@ export default function Home() {
           
           <div className="mb-16">
             <h2 className="text-4xl md:text-6xl font-orbitron text-white mb-4">
-              EVENT <span className="text-neon-cyan">LOGS</span>
+              <span className="text-neon-cyan">EVENTS</span>
             </h2>
-            <p className="text-neon-pink font-mono text-sm md:text-base tracking-widest animate-pulse">
-              /// ACCESSING DATABASE...
-            </p>
-            <p className="text-gray-400 font-rajdhani text-lg mt-4 max-w-2xl mx-auto">
-              From coding wars to neon racing, explore the future of competition.
-            </p>
+
           </div>
           
           {/* Dual Image Grid */}
