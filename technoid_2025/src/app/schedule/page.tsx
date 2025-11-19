@@ -13,8 +13,7 @@ export default function SchedulePage() {
   return (
     <main className="min-h-screen bg-cyber-black py-24">
       <TitleBanner 
-        title="EVENT_SCHEDULE" 
-        subtitle="Timeline & Protocols" 
+        title="EVENTS SCHEDULE" 
         className="mb-12"
       />
       
