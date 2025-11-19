@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
-// TARGET DATE: NOV 29, 2025 (Adjust year if needed)
+// TARGET DATE: NOV 29, 2025
 const TARGET_DATE = new Date("2025-11-29T00:00:00");
 
 type TimeUnit = {
@@ -26,7 +26,6 @@ export default function LaunchDate() {
 
       if (difference <= 0) {
         clearInterval(interval);
-        // Set to zeros if event passed
         setTimeLeft([
           { label: "DAYS", value: 0 },
           { label: "HOURS", value: 0 },
@@ -52,20 +51,20 @@ export default function LaunchDate() {
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center py-8">
+    <div className="flex flex-col items-center justify-center py-6">
       <div className="grid grid-cols-4 gap-4 md:gap-8">
-        {timeLeft.map((unit, index) => (
+        {timeLeft.map((unit) => (
           <div key={unit.label} className="flex flex-col items-center group">
             
             {/* Digital Box Container */}
-            <div className="relative flex items-center justify-center w-16 h-16 md:w-24 md:h-24 bg-black/50 border border-neon-cyan/30 clip-tile hover:border-neon-cyan hover:shadow-[0_0_15px_rgba(0,243,255,0.4)] transition-all duration-300">
+            <div className="relative flex items-center justify-center w-14 h-14 md:w-20 md:h-20 bg-black/50 border border-neon-cyan/30 clip-tile hover:border-neon-cyan hover:shadow-[0_0_15px_rgba(0,243,255,0.4)] transition-all duration-300">
               
               {/* Animated Number */}
               <motion.span
-                key={unit.value} // Triggers animation on change
-                initial={{ opacity: 0.5, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                className="text-2xl md:text-4xl font-orbitron font-bold text-white glitch-text"
+                key={unit.value}
+                initial={{ opacity: 0.5 }}
+                animate={{ opacity: 1 }}
+                className="text-xl md:text-3xl font-orbitron font-bold text-white glitch-text"
               >
                 {unit.value < 10 ? `0${unit.value}` : unit.value}
               </motion.span>
@@ -76,16 +75,16 @@ export default function LaunchDate() {
             </div>
 
             {/* Label */}
-            <h4 className="mt-3 text-xs md:text-sm font-mono text-neon-cyan tracking-widest opacity-80 group-hover:opacity-100 group-hover:text-neon-yellow transition-colors">
+            <h4 className="mt-2 text-[10px] md:text-xs font-mono text-neon-cyan tracking-widest opacity-80">
               {unit.label}
             </h4>
           </div>
         ))}
       </div>
       
-      {/* Event Date Display */}
-      <div className="mt-6 text-neon-pink font-orbitron tracking-[0.3em] text-sm md:text-base animate-pulse">
-        29 - 30 NOV 2025
+      {/* UPDATED DATE DISPLAY */}
+      <div className="mt-8 text-neon-pink font-orbitron tracking-[0.5em] text-lg md:text-2xl animate-pulse shadow-neon-pink drop-shadow-[0_0_5px_rgba(255,0,255,0.8)]">
+        29 NOV 2025
       </div>
     </div>
   );
