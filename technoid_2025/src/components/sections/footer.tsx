@@ -12,15 +12,16 @@ const footerLinks = [
 ];
 
 export default function Footer() {
-
+  // The direct link to open in Google Maps App/Website
   const mapDirectLink = "https://maps.app.goo.gl/DWpwowodoe99CAik6";
-
-  const mapEmbedUrl = "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14244.413105698735!2d75.676916!3d26.80484!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db407a0ff3999%3A0x4e104046d66ef7ca!2sSt.%20Xavier&#39;s%20College%20Jaipur!5e0!3m2!1sen!2sin!4v1763542557995!5m2!1sen!2sin";
+  
+  // NEW STABLE EMBED URL
+  const mapEmbedUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3561.859600127221!2d75.676916!3d26.80484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db407a0ff3999%3A0x4e104046d66ef7ca!2sSt.%20Xavier's%20College%20Jaipur!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin";
 
   return (
     <footer className="relative w-full border-t border-neon-cyan/20 bg-cyber-black text-gray-400 py-12 md:py-16 px-6 md:px-12">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
-
+  
         <div className="flex flex-col items-center md:items-start">
           <h3 className="font-orbitron text-lg text-white mb-4 tracking-widest">
             REGISTRATION SCANNER
@@ -36,11 +37,11 @@ export default function Footer() {
           </div>
         </div>
 
+
         <div className="flex flex-col items-center text-center">
           <Link href="/" className="text-3xl md:text-4xl font-orbitron font-bold text-white tracking-widest mb-8 hover:text-neon-cyan transition-colors">
             TECHNOID<span className="text-neon-cyan">_25</span>
           </Link>
-          
 
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 mb-8 font-rajdhani text-lg">
             {footerLinks.map((link) => (
@@ -52,12 +53,10 @@ export default function Footer() {
 
           <div className="w-full border-t border-gray-800 my-4"></div>
 
-
           <div className="space-y-4 text-center md:text-left w-full max-w-xs">
             <div className="flex flex-col md:flex-row items-center md:items-start gap-3">
               <MapPin className="w-5 h-5 text-neon-pink flex-shrink-0 mt-1" />
               <span>
-
                 <a 
                   href="https://sxcjpr.edu.in/" 
                   target="_blank" 
@@ -78,7 +77,6 @@ export default function Footer() {
             </div>
           </div>
 
-    
           <div className="flex gap-6 mt-8">
             <a href="https://www.youtube.com/@departmentofcomputerscienc9441" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-[#FF0000] transition-transform hover:scale-110">
               <Youtube className="w-8 h-8" />
@@ -88,7 +86,6 @@ export default function Footer() {
             </a>
           </div>
         </div>
-
 
         <div className="flex flex-col items-center md:items-end w-full">
           <h3 className="font-orbitron text-lg text-white mb-4 tracking-widest">
@@ -120,7 +117,6 @@ export default function Footer() {
                 </div>
             </a>
           </div>
-
 
           <div className="md:hidden w-full max-w-xs">
             <Button asChild className="w-full h-12 bg-cyber-gray/50 border-2 border-neon-cyan text-neon-cyan hover:bg-neon-cyan hover:text-black font-orbitron tracking-widest transition-all">
