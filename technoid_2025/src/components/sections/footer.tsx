@@ -28,7 +28,7 @@ export default function Footer() {
           </h3>
           <div className="border-2 border-neon-cyan/50 p-2 bg-cyber-gray hover:shadow-[0_0_20px_rgba(0,243,255,0.3)] transition-shadow duration-300">
             <img
-              src="/qrcode.jpg"
+              src="/images/qrcode.jpg"
               alt="Registration QR Code"
               width={200}
               height={200}
