@@ -30,7 +30,7 @@ export default function NavBar() {
   ];
 
   // Registration Link
-  const registrationLink = "https://forms.gle/your-registration-link"; // Replace with actual link
+  const registrationLink = "https://registration.sxcjpr.edu.in/event/technoid-2025/"; // Replace with actual link
 
   return (
     <nav
@@ -183,7 +183,7 @@ export default function NavBar() {
             </Link>
 
             <Button asChild className="mt-auto w-full bg-neon-cyan text-black font-bold font-orbitron">
-                <Link href="https://registration.sxcjpr.edu.in/event/technoid-2025/" target="_blank">
+                <Link href={registrationLink} target="_blank">
                     REGISTER NOW
                 </Link>
             </Button>
