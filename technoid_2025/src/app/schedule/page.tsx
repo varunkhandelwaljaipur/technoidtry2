@@ -6,7 +6,7 @@ import { Download } from "lucide-react";
 
 export default function SchedulePage() {
   // Path to your schedule image
-  const scheduleImage = "/images/schedule.jpg"; 
+  const scheduleImage = "/images/Schedule.jpg"; 
   // Path to rulebook (keeping this button as a utility)
   const rulebookPath = "/rulebook.pdf";
 
