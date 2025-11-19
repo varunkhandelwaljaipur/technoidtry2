@@ -33,8 +33,7 @@ export default function SchedulePage() {
         <div className="mt-12">
             <Button asChild variant="outline" size="lg" className="border-neon-yellow text-neon-yellow hover:bg-neon-yellow hover:text-black font-orbitron tracking-wider">
                 <Link href={rulebookPath} target="_blank" rel="noopener noreferrer">
-                    <Download className="w-5 h-5 mr-2" />
-                    DOWNLOAD RULEBOOK PDF
+                    RULEBOOK PDF
                 </Link>
             </Button>
         </div>
