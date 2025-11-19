@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <main className="min-h-screen text-white bg-[#050505] overflow-x-hidden">
       
-      {/* --- HERO SECTION (Already Responsive) --- */}
+
       <Hero />
 
       {/* --- ABOUT SECTION --- */}
@@ -25,20 +25,24 @@ export default function Home() {
           <div className="border border-neon-cyan/30 bg-cyber-gray/40 backdrop-blur-sm p-6 md:p-12 rounded-lg shadow-[0_0_40px_rgba(0,243,255,0.1)] hover:shadow-[0_0_60px_rgba(0,243,255,0.2)] transition-all duration-500">
             
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-orbitron text-neon-pink mb-8 text-center glitch-text tracking-wide break-words">
-              ABOUT US
+              SYSTEM_OVERRIDE // ABOUT
             </h2>
             
             <div className="space-y-6 text-center font-rajdhani text-lg md:text-xl leading-relaxed text-gray-300">
               <p>
-                <span className="text-neon-yellow font-bold">Technoid 2025</span> initializes a total system override of the Department of Computer Science. We are transforming the campus into a <span className="text-white">Cyberpunk Arena</span>—an electrifying convergence of neon aesthetics, advanced tech, and the raw energy of a digital-first world.
+                Get ready for an electrifying, unforgettable experience at <span className="text-neon-yellow font-bold">TECHNOID’25: THE NEON ASCENT!</span> This year, we embrace the theme: <span className="text-white">Cyberpunk – Where Technology Empowers Humanity.</span>
               </p>
               
               <p className="text-base sm:text-lg md:text-lg text-gray-400 font-rajdhani leading-relaxed text-justify md:text-center hidden md:block">
-                In a time where digital systems shape every aspect of life, Technoid 2025 explores a world powered by data, networks, AI, and virtual ecosystems. But beyond the glow of futuristic imagination, it emphasizes what truly matters: cybersecurity, ethics, and digital responsibility. This fest invites students to step beyond passive usage and evolve into creators, defenders, and critical thinkers shaping the next era of technology.
+                Witness the ultimate fusion of cutting-edge technology and human potential in a transformative journey where innovation lights up the dark. Hosted by the Department of Computer Science at St. Xavier's College Jaipur, this festival unveils a vibrant era of limitless possibility, focusing on how technology serves as a tool for human liberation and creative ascent.
               </p>
 
               <p className="text-base sm:text-lg md:text-lg text-gray-400 font-rajdhani leading-relaxed text-justify md:text-center">
-                Engage in high-energy protocols, immersive simulations, and visually striking cyberpunk environments. <span className="text-neon-pink font-bold">Technoid 2025</span> is your gateway to the future—where creativity meets code, and imagination rewrites the system.
+                Step into a visually stunning, high-octane world of action-packed activities, immersive exhibits, and innovative showcases that celebrate tomorrow's cyberpunk trailblazers. From hands-on workshops that delve into ethical AI to futuristic demos showcasing the power of human-centric design, The Neon Ascent promises a thrilling dive into a future where technology doesn't just assist, but actively empowers.
+              </p>
+
+              <p>
+                Join us to <span className="text-neon-cyan font-bold">Explore, Innovate, and Ascend</span>—together, we will shape the future where the human spirit is amplified by the brightest tech.
               </p>
               
               <div className="w-full border-t border-gray-700 my-6"></div>
