@@ -22,7 +22,7 @@ export default function Hero() {
         
         {/* Main Title: TECHNOID */}
  <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black font-orbitron tracking-tighter text-white drop-shadow-2xl leading-none break-words">
-          TECHNOID<span className="text-gray-500">'</span>25
+          TECHNOID<span className="text-neon-yellow-500">'</span>25
         </h1>
         
         {/* Subtitle */}
