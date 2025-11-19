@@ -6,6 +6,7 @@ import Footer from "@/components/sections/footer";
 import SmoothScroll from "@/components/SmoothScroll";
 import SocialMediaLinks from "@/components/SocialMediaLinks";
 import BackToTop from "@/components/BackToTop";
+import NeonCursor from "@/components/NeonCursor"; // Import the cursor component
 
 const orbitron = Orbitron({ subsets: ["latin"], variable: "--font-orbitron" });
 const rajdhani = Rajdhani({ subsets: ["latin"], weight: ["400", "700"], variable: "--font-rajdhani" });
@@ -22,9 +23,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${orbitron.variable} ${rajdhani.variable} dark`}>
-      <body className="font-rajdhani bg-cyber-black antialiased">
+      {/* md:cursor-none -> Hides the default arrow on desktop so the Neon Cursor takes over.
+        selection:bg-neon-cyan -> Makes highlighted text look cyberpunk.
+      */}
+      <body className="font-rajdhani bg-cyber-black antialiased md:cursor-none selection:bg-neon-cyan selection:text-black">
+        
+        {/* The Glowing Cursor Effect */}
+        <NeonCursor />
+        
         <NavBar />
-        <SmoothScroll>{children}</SmoothScroll>
+        
+        <SmoothScroll>
+          {children}
+        </SmoothScroll>
+        
         <Footer />
         
         {/* Fixed UI Elements */}
