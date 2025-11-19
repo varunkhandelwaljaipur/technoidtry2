@@ -40,7 +40,7 @@ export default function Footer() {
 
         <div className="flex flex-col items-center text-center">
           <Link href="/" className="text-3xl md:text-4xl font-orbitron font-bold text-white tracking-widest mb-8 hover:text-neon-cyan transition-colors">
-            <span className="text-neon-cyan">TECHNOID</span>
+            <span className="text-neon-cyan">TECHNOID'25</span>
           </Link>
 
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 mb-8 font-rajdhani text-lg">
