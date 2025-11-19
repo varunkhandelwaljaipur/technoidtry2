@@ -7,27 +7,27 @@ import React from "react";
 import CyberImage from "@/components/CyberImage"; 
 import Link from "next/link"; 
 
-// Helper component for icons based on event title
+
 const EventIcon = ({ title }: { title: string }) => {
   const iconMap: { [key: string]: React.ReactNode } = {
-    "Neon Narratives": <Camera className="w-6 h-6 text-neon-pink" />,
-    "Reel-o-Tron": <Clapperboard className="w-6 h-6 text-neon-pink" />,
-    "Tech Trivia": <Brain className="w-6 h-6 text-neon-cyan" />,
-    "Crafted Canvas": <Palette className="w-6 h-6 text-neon-cyan" />,
-    "Neon Velocity": <Zap className="w-6 h-6 text-neon-yellow" />,
-    "CyberMote": <Puzzle className="w-6 h-6 text-neon-yellow" />,
-    "The Neon Trail": <MapPin className="w-6 h-6 text-neon-yellow" />, 
-    "LAN Gaming Arena": <Gamepad className="w-6 h-6 text-neon-yellow" />,
-    "TechnoRebirth": <Recycle className="w-6 h-6 text-neon-cyan" />,
-    "Hack-a-Meme": <Bot className="w-6 h-6 text-neon-cyan" />,
+    "Neon Narratives": <Camera className="w-5 h-5 text-neon-pink" />,
+    "Reel-o-Tron": <Clapperboard className="w-5 h-5 text-neon-pink" />,
+    "Tech Trivia": <Brain className="w-5 h-5 text-neon-cyan" />,
+    "Crafted Canvas": <Palette className="w-5 h-5 text-neon-cyan" />,
+    "Neon Velocity": <Zap className="w-5 h-5 text-neon-yellow" />,
+    "CyberMote": <Puzzle className="w-5 h-5 text-neon-yellow" />,
+    "The Neon Trail": <MapPin className="w-5 h-5 text-neon-yellow" />, 
+    "LAN Gaming Arena": <Gamepad className="w-5 h-5 text-neon-yellow" />,
+    "TechnoRebirth": <Recycle className="w-5 h-5 text-neon-cyan" />,
+    "Hack-a-Meme": <Bot className="w-5 h-5 text-neon-cyan" />,
   };
-  return iconMap[title] || <Code className="w-6 h-6 text-gray-500" />;
+  return iconMap[title] || <Code className="w-5 h-5 text-gray-500" />;
 };
 
 // --- Event Data Structure ---
 const eventCategories = [
   {
-    categoryTitle: "PRE-EVENTS // UPLOAD_INCOMING",
+    categoryTitle: "PRE-EVENTS",
     categoryColor: "text-neon-pink",
     events: [
       {
@@ -45,7 +45,8 @@ const eventCategories = [
     ]
   },
   {
-    categoryTitle: "MAIN EVENT // SYSTEM_ONLINE",
+  
+    categoryTitle: "MAIN EVENTS",
     categoryColor: "text-neon-cyan",
     events: [
       {
@@ -105,23 +106,28 @@ export default function EventsPage() {
     <main className="min-h-screen bg-cyber-black hologram-background">
       <TitleBanner title="EVENTS_PROTOCOL" subtitle="Loading Event Modules..." />
       
-      {/* Increased max-width for bigger cards */}
-      <section className="max-w-[1600px] mx-auto py-24 px-6">
+      <section className="max-w-7xl mx-auto py-16 px-6">
         {eventCategories.map((category) => (
-          <div key={category.categoryTitle} className="mb-32">
-            {/* Category Title */}
-            <h2 className={`text-5xl font-orbitron mb-16 border-b-2 pb-6 ${category.categoryColor} border-${category.categoryColor.replace('text-', '')}/30 tracking-widest`}>
-              {category.categoryTitle}
-            </h2>
+          <div key={category.categoryTitle} className="mb-24">
             
-            {/* Events Grid - Increased Gap */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+            {/* UPDATED HEADER: 
+               - Centered text
+               - Responsive sizing (3xl mobile -> 5xl desktop)
+               - Clean look without extra symbols
+            */}
+            <div className="flex justify-center mb-12">
+              <h2 className={`text-3xl md:text-5xl font-orbitron font-bold tracking-widest text-center border-b-4 pb-4 px-8 ${category.categoryColor} border-${category.categoryColor.replace('text-', '')}/30`}>
+                {category.categoryTitle}
+              </h2>
+            </div>
+            
+            {/* Events Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
               {category.events.map((event) => (
                 // --- THE EVENT CARD CONTAINER ---
                 <div 
                   key={event.title} 
-                  // aspect-[2/3] ensures tall poster shape. Sizing comes from parent grid.
-                  className="clip-tile group relative flex flex-col w-full aspect-[2/3] bg-cyber-black/70 backdrop-blur-sm border border-neon-cyan/30 overflow-hidden transition-all duration-500 hover:border-neon-cyan/100 hover:shadow-[0_0_50px_rgba(0,243,255,0.4)] hover:-translate-y-2"
+                  className="clip-tile group relative flex flex-col w-full aspect-[2/3] bg-cyber-black/70 backdrop-blur-sm border border-neon-cyan/30 overflow-hidden transition-all duration-300 hover:border-neon-cyan/100 hover:shadow-[0_0_30px_rgba(0,243,255,0.3)]"
                 >
                   
                   {/* --- 1. FULL POSTER DISPLAY --- */}
@@ -129,29 +135,26 @@ export default function EventsPage() {
                     <CyberImage
                       src={event.poster}
                       alt={`${event.title} Poster`}
-                      // CHANGED: object-fill forces the image to fill the entire container area
-                      // This ensures no part of the poster is cut off, although it may stretch slightly if ratios differ.
-                      className="w-full h-full object-fill transition-transform duration-700 group-hover:scale-110" 
+                      className="w-full h-full object-fill transition-transform duration-500 group-hover:scale-105" 
                     />
-                    {/* Subtle bottom gradient to make sure text pops if image is light */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-50" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-40" />
                   </div>
 
                   {/* --- 2. HOVER OVERLAY (Details) --- */}
-                  <div className="absolute inset-0 bg-cyber-black/95 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0">
+                  <div className="absolute inset-0 bg-cyber-black/95 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 translate-y-4 group-hover:translate-y-0">
                     
-                    <div className="flex items-center justify-between mb-4">
-                      <span className={`font-mono text-sm ${category.categoryColor} uppercase tracking-widest`}>
+                    <div className="flex items-center justify-between mb-2">
+                      <span className={`font-mono text-xs ${category.categoryColor} uppercase tracking-widest`}>
                         {event.tag}
                       </span>
                       <EventIcon title={event.title} />
                     </div>
                     
-                    <h3 className="text-3xl font-orbitron font-bold text-white mb-4 leading-tight">
+                    <h3 className="text-2xl font-orbitron font-bold text-white mb-3 leading-tight">
                       {event.title}
                     </h3>
                     
-                    <p className="font-rajdhani text-gray-300 text-base mb-8 line-clamp-6 leading-relaxed">
+                    <p className="font-rajdhani text-gray-300 text-sm mb-6 line-clamp-6">
                       {event.desc}
                     </p>
 
