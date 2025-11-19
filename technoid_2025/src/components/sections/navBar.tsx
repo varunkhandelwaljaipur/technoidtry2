@@ -3,14 +3,14 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import CyberImage from "@/components/CyberImage"; // Using our safe image component
+import CyberImage from "@/components/CyberImage"; 
 
 export default function NavBar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [rulesOpen, setRulesOpen] = useState(false); // For mobile dropdown
+  const [rulesOpen, setRulesOpen] = useState(false); 
   const pathname = usePathname();
 
   useEffect(() => {
@@ -19,18 +19,16 @@ export default function NavBar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Modified order: Rules before Contact
   const navLinks = [
     { name: "HOME", href: "/" },
     { name: "EVENTS", href: "/events" },
     { name: "GALLERY", href: "/gallery" },
     { name: "SPONSORS", href: "/sponsors" },
-    // RULES will be inserted here manually in the render logic
+    // RULES inserted manually
     { name: "CONTACT", href: "/contact" },
   ];
 
-  // Registration Link
-  const registrationLink = "https://registration.sxcjpr.edu.in/event/technoid-2025/"; // Replace with actual link
+  const registrationLink = "https://forms.gle/your-registration-link"; 
 
   return (
     <nav
@@ -40,12 +38,11 @@ export default function NavBar() {
           : "bg-transparent border-transparent h-24"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 h-full flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 h-full flex items-center justify-between">
         
         {/* --- LEFT: COLLEGE LOGO --- */}
-        <Link href="/" className="flex items-center gap-3 group">
-            {/* Replace src with your actual logo path */}
-            <div className="w-12 h-12 relative overflow-hidden rounded-full border-2 border-neon-cyan/50 group-hover:border-neon-cyan transition-colors">
+        <Link href="/" className="flex items-center gap-2 md:gap-3 group flex-shrink-0">
+            <div className="w-10 h-10 md:w-12 md:h-12 relative overflow-hidden rounded-full border-2 border-neon-cyan/50 group-hover:border-neon-cyan transition-colors">
                 <CyberImage 
                     src="/images/college-logo.png" 
                     alt="College Logo" 
@@ -53,14 +50,13 @@ export default function NavBar() {
                 />
             </div>
             <div className="flex flex-col">
-                <span className="text-white font-orbitron font-bold text-lg leading-none tracking-wider">TECHNOID</span>
-                <span className="text-neon-cyan font-mono text-xs tracking-widest">2025</span>
+                <span className="text-white font-orbitron font-bold text-base md:text-lg leading-none tracking-wider">TECHNOID</span>
+                <span className="text-neon-cyan font-mono text-[10px] md:text-xs tracking-widest">2025</span>
             </div>
         </Link>
 
-        {/* --- CENTER: NAVIGATION LINKS --- */}
+        {/* --- CENTER: NAVIGATION LINKS (Desktop Only) --- */}
         <div className="hidden lg:flex items-center gap-8">
-          {/* Standard Links (Home, Events, Gallery, Sponsors) */}
           {navLinks.slice(0, 4).map((link) => (
             <Link
               key={link.name}
@@ -79,13 +75,11 @@ export default function NavBar() {
             </Link>
           ))}
 
-          {/* Rules Dropdown (Hover) - Inserted before Contact */}
+          {/* Rules Dropdown */}
           <div className="relative group">
             <button className="flex items-center gap-1 font-rajdhani font-bold text-lg tracking-widest text-gray-400 group-hover:text-white transition-colors">
               RULES <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
             </button>
-            
-            {/* Dropdown Menu */}
             <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
                 <div className="bg-cyber-black border border-neon-cyan/50 p-2 w-48 flex flex-col gap-1 clip-tile shadow-[0_0_20px_rgba(0,243,255,0.2)]">
                     <Link href="/rulebook.pdf" target="_blank" className="block px-4 py-2 text-gray-300 hover:bg-neon-cyan/10 hover:text-neon-cyan font-mono text-sm transition-colors">
@@ -98,45 +92,49 @@ export default function NavBar() {
             </div>
           </div>
 
-          {/* Contact Link (Last Item) */}
+          {/* Contact Link */}
           <Link
               href="/contact"
               className={`relative font-rajdhani font-bold text-lg tracking-widest transition-colors duration-300 ${
                 pathname === "/contact" ? "text-neon-yellow" : "text-gray-400 hover:text-white"
               }`}
             >
-              {pathname === "/contact" && (
-                <span className="absolute -left-3 text-neon-cyan animate-pulse">[</span>
-              )}
+              {pathname === "/contact" && <span className="absolute -left-3 text-neon-cyan animate-pulse">[</span>}
               CONTACT
-              {pathname === "/contact" && (
-                <span className="absolute -right-3 text-neon-cyan animate-pulse">]</span>
-              )}
+              {pathname === "/contact" && <span className="absolute -right-3 text-neon-cyan animate-pulse">]</span>}
             </Link>
         </div>
 
-        {/* --- RIGHT: REGISTER BUTTON --- */}
-        <div className="hidden lg:block">
-            <Button asChild className="bg-neon-yellow text-black hover:bg-white hover:text-black font-orbitron font-bold tracking-wider clip-path-button shadow-[0_0_15px_rgba(255,238,0,0.4)]">
+        {/* --- RIGHT SIDE ACTIONS (Mobile & Desktop) --- */}
+        <div className="flex items-center gap-3 md:gap-4">
+            
+            {/* 1. REGISTER BUTTON (Visible on ALL screens) */}
+            {/* Mobile: Small, Compact. Desktop: Full Text. */}
+            <Button asChild className="bg-neon-yellow text-black hover:bg-white hover:text-black font-orbitron font-bold tracking-wider shadow-[0_0_15px_rgba(255,238,0,0.4)] h-8 md:h-10 px-3 md:px-6 text-xs md:text-sm clip-path-button">
                 <Link href={registrationLink} target="_blank">
-                    REGISTER NOW
+                    {/* Desktop Text */}
+                    <span className="hidden md:inline">REGISTER NOW</span>
+                    {/* Mobile Text + Icon */}
+                    <span className="md:hidden flex items-center gap-1">
+                        REGISTER <Zap className="w-3 h-3 fill-black" />
+                    </span>
                 </Link>
             </Button>
+
+            {/* 2. MOBILE MENU TOGGLE */}
+            <button 
+                className="lg:hidden text-neon-cyan p-1 border border-neon-cyan/30 rounded-md hover:bg-neon-cyan/10 transition-colors"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+                {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
         </div>
 
-        {/* --- MOBILE MENU TOGGLE --- */}
-        <button 
-            className="lg:hidden text-neon-cyan"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        >
-            {mobileMenuOpen ? <X /> : <Menu />}
-        </button>
       </div>
 
       {/* --- MOBILE MENU OVERLAY --- */}
       {mobileMenuOpen && (
-        <div className="lg:hidden fixed inset-0 top-20 bg-black/95 backdrop-blur-xl border-t border-neon-cyan/30 p-6 flex flex-col gap-6 z-40">
-            {/* Standard Links (Home -> Sponsors) */}
+        <div className="lg:hidden fixed inset-0 top-20 bg-black/95 backdrop-blur-xl border-t border-neon-cyan/30 p-6 flex flex-col gap-6 z-40 h-[calc(100vh-5rem)] overflow-y-auto">
             {navLinks.slice(0, 4).map((link) => (
                 <Link
                     key={link.name}
@@ -171,7 +169,6 @@ export default function NavBar() {
                 )}
             </div>
 
-            {/* Contact Link */}
             <Link
                 href="/contact"
                 onClick={() => setMobileMenuOpen(false)}
@@ -181,12 +178,6 @@ export default function NavBar() {
             >
                 CONTACT
             </Link>
-
-            <Button asChild className="mt-auto w-full bg-neon-cyan text-black font-bold font-orbitron">
-                <Link href={registrationLink} target="_blank">
-                    REGISTER NOW
-                </Link>
-            </Button>
         </div>
       )}
     </nav>
