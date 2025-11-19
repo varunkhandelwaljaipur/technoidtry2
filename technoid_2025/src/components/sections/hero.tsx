@@ -21,8 +21,8 @@ export default function Hero() {
       <div className="z-20 text-center space-y-6 max-w-5xl mx-auto relative mt-20">
         
         {/* Main Title: TECHNOID */}
-        <h1 className="text-6xl sm:text-8xl md:text-9xl lg:text-[11rem] font-black font-orbitron tracking-tighter text-white drop-shadow-2xl leading-none">
-          TECHNOID'25
+ <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black font-orbitron tracking-tighter text-white drop-shadow-2xl leading-none break-words">
+          TECHNOID<span className="text-gray-500">'</span>25
         </h1>
         
         {/* Subtitle */}
