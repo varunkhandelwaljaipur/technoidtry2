@@ -65,7 +65,7 @@ const eventCategories = [
         title: "Neon Velocity",
         tag: "Retro Racing",
         desc: "Inspired by Need for Speed and Road Rash, this event puts participants in the driver’s seat of a neon-drenched city where speed meets rebellion.",
-        poster: "/images/Retro Recharged.jpg"
+        poster: "/images/Retro Reacharged.jpg"
       },
       {
         title: "CyberMote",
