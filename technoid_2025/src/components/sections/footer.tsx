@@ -41,7 +41,7 @@ export default function Footer() {
 
         <div className="flex flex-col items-center text-center">
           <Link href="/" className="text-3xl md:text-4xl font-orbitron font-bold text-white tracking-widest mb-8 hover:text-neon-cyan transition-colors">
-            TECHNOID<span className="text-neon-cyan">_25</span>
+            <span className="text-neon-cyan">TECHNOID</span>
           </Link>
           
           {/* Footer Nav */}
