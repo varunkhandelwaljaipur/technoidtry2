@@ -8,7 +8,7 @@ import CyberImage from "@/components/CyberImage";
 export default function Home() {
   // Paths to your images (Upload these to public/images/)
   const mainPosterImage = "/images/MainPoster.jpg"; 
-  const scheduleImage = "/images/EventList.jpg";
+  const scheduleImage = "/images/EventsList.jpg";
 
   return (
     <main className="min-h-screen text-white bg-[#050505] overflow-x-hidden">
