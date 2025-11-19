@@ -25,7 +25,7 @@ export default function Home() {
           <div className="border border-neon-cyan/30 bg-cyber-gray/40 backdrop-blur-sm p-6 md:p-12 rounded-lg shadow-[0_0_40px_rgba(0,243,255,0.1)] hover:shadow-[0_0_60px_rgba(0,243,255,0.2)] transition-all duration-500">
             
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-orbitron text-neon-pink mb-8 text-center glitch-text tracking-wide break-words">
-              SYSTEM_OVERRIDE // ABOUT
+              ABOUT
             </h2>
             
             <div className="space-y-6 text-center font-rajdhani text-lg md:text-xl leading-relaxed text-gray-300">
